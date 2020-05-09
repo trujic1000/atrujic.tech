@@ -1,29 +1,32 @@
 import React from "react";
 import styled from "styled-components";
-import { AnchorLink as Link } from "gatsby-plugin-anchor-links";
 import { useMenuContext } from "state/menu";
-import { useTheme } from "hooks";
-// import Icon from "../Icon"
+import Link from "components/scrollLink";
+import Icon from "components/Icon";
 
-export const links = ["home", "about", "contact"];
-
-const DesktopNavLinks = () => {
+const DesktopNavLinks = ({ theme, toggleTheme }) => {
   const { closeMenu } = useMenuContext();
-  const [theme, toggleTheme] = useTheme();
 
   return (
     <NavLinksWrapper className="nav-links">
-      {links.map(link => (
-        <li key={link}>
-          <NavLink to={`/${link}`} className="link" onClick={closeMenu}>
-            {link}
-          </NavLink>
-        </li>
-      ))}
+      <li>
+        <NavLink to="about-me" className="link" onClick={closeMenu}>
+          About Me
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="portfolio" className="link" onClick={closeMenu}>
+          Portfolio
+        </NavLink>
+      </li>
+      <li>
+        <NavLink to="contact" className="link" onClick={closeMenu}>
+          Contact
+        </NavLink>
+      </li>
       <li>
         <button onClick={toggleTheme}>
-          {/* <Icon name={theme === "dark" ? "day" : "night"} /> */}
-          Theme
+          <Icon size={18} name={theme === "dark" ? "day" : "night"} />
         </button>
       </li>
     </NavLinksWrapper>
@@ -44,7 +47,8 @@ const NavLinksWrapper = styled.ul`
   }
 
   li:last-child {
-    margin-left: auto;
+    position: absolute;
+    right: 60px;
   }
 
   button {
@@ -59,6 +63,14 @@ const NavLinksWrapper = styled.ul`
     li {
       padding: 12px;
       margin: 0 !important;
+    }
+
+    li:last-child {
+      padding: 0;
+      right: initial;
+      left: 50%;
+      bottom: 60px;
+      transform: translate(-70%);
     }
   }
 `;

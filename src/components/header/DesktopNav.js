@@ -1,23 +1,26 @@
 import React from "react";
-import { AnchorLink as Link } from "gatsby-plugin-anchor-links";
 import styled, { css } from "styled-components";
 import { Squash as Hamburger } from "hamburger-react";
 
 import NavLinks from "./NavLinks";
+import Link from "components/scrollLink";
 import { Container } from "components/elements";
 import { useMenuContext } from "state/menu";
 import { useScroll } from "hooks";
+import Icon from "components/Icon";
 
-const DesktopNavbar = () => {
+const DesktopNavbar = ({ theme, toggleTheme }) => {
   const { isMenuOpen, toggleMenu } = useMenuContext();
   const { isScrolled } = useScroll();
   return (
     <DesktopNav isScrolled={isScrolled}>
       <Wrapper>
-        <Link to="/" className="logo">
-          Logo
-        </Link>
-        <NavLinks />
+        <div className="logo-wrap">
+          <Link to="home" className="logo">
+            <Icon name={theme === "dark" ? "logo-light" : "logo-dark"} />
+          </Link>
+        </div>
+        <NavLinks theme={theme} toggleTheme={toggleTheme} />
         <Hamburger toggled={isMenuOpen} toggle={toggleMenu} duration={0} />
       </Wrapper>
     </DesktopNav>
@@ -35,14 +38,6 @@ const Wrapper = styled(Container)`
 `;
 
 const DesktopNav = styled.nav`
-  /* display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-around;
-  align-items: center; */
-
-  background: var(--bg1);
-  transition: all 150ms linear;
-
   ${props =>
     props.isScrolled &&
     css`
@@ -63,10 +58,8 @@ const DesktopNav = styled.nav`
     /* padding: 0 30px; */
   }
 
-  .logo {
-    flex: 2;
-    color: var(--text);
-    font-size: 32px;
+  .logo-wrap {
+    flex: 1;
   }
 
   .nav-links {

@@ -1,13 +1,14 @@
 import React from "react";
-import styled from "styled-components";
 import DesktopNav from "./DesktopNav";
 import MobileNav from "./MobileNav";
+import { useTheme } from "hooks";
 
 const Navbar = () => {
+  const [theme, toggleTheme] = useTheme();
   return (
     <>
-      <DesktopNav />
-      <MobileNav />
+      <DesktopNav theme={theme} toggleTheme={toggleTheme} />
+      <MobileNav theme={theme} toggleTheme={toggleTheme} />
     </>
   );
 };

@@ -6,7 +6,6 @@ module.exports = {
     siteUrl: `https://atrujic.tech`,
   },
   plugins: [
-    `gatsby-plugin-anchor-links`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
@@ -33,4 +32,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
-}
+};

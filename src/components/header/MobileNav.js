@@ -5,14 +5,14 @@ import { useMenuContext } from "state/menu";
 import { useScrollFreeze } from "hooks";
 import NavLinks from "./NavLinks";
 
-const MobileNavbar = () => {
+const MobileNavbar = ({ theme, toggleTheme }) => {
   const { isMenuOpen } = useMenuContext();
   useScrollFreeze(isMenuOpen);
   return (
     <>
       {isMenuOpen && (
         <MobileNav>
-          <NavLinks />
+          <NavLinks theme={theme} toggleTheme={toggleTheme} />
         </MobileNav>
       )}
     </>
@@ -31,4 +31,5 @@ const MobileNav = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 `;
