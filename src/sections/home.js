@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Particles from "react-particles-js";
 import { Container } from "components/elements";
+import ButtonLink from "components/buttonLink";
 
 const params = {
   particles: {
@@ -99,9 +100,24 @@ const params = {
 
 const Home = () => {
   return (
-    <Background params={params}>
-      <Container>Blabla</Container>
-    </Background>
+    <Intro>
+      <Background params={params} />
+      <Wrapper>
+        <h1>
+          Hey, I'm Aleksandar!
+          <br />
+          <span>
+            A <strong>Front-End</strong> Developer.
+          </span>
+        </h1>
+        <div className="button-wrap">
+          <ButtonLink to="portfolio">Portfolio</ButtonLink>
+          <ButtonLink to="portfolio" className="outline">
+            Get In Touch
+          </ButtonLink>
+        </div>
+      </Wrapper>
+    </Intro>
   );
 };
 
@@ -114,4 +130,28 @@ const Background = styled(Particles)`
   z-index: -1;
   width: 100vw;
   height: 100vh;
+`;
+
+const Intro = styled.section`
+  min-height: 75vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+`;
+
+const Wrapper = styled(Container)`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    span {
+      font-size: 4rem;
+      strong {
+        font-weight: 500;
+      }
+    }
+  }
 `;

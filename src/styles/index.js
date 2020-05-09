@@ -20,5 +20,6 @@ export const GlobalStyle = createGlobalStyle`
     color: var(--text);
     font-weight: var(--fontWeight);
     transition: background, color 150ms linear;
+    line-height: 1.2;
   }
 `;
