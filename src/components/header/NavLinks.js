@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { useMenuContext } from "state/menu";
 import Link from "components/scrollLink";
-import Icon from "components/Icon";
+import Icon from "components/icon";
 
 const DesktopNavLinks = ({ theme, toggleTheme }) => {
   const { closeMenu } = useMenuContext();

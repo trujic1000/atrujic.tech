@@ -4,40 +4,42 @@ import { Squash as Hamburger } from "hamburger-react";
 
 import NavLinks from "./NavLinks";
 import Link from "components/scrollLink";
-import { Container } from "components/elements";
 import { useMenuContext } from "state/menu";
 import { useScroll } from "hooks";
-import Icon from "components/Icon";
+import Icon from "components/icon";
 
 const DesktopNavbar = ({ theme, toggleTheme }) => {
   const { isMenuOpen, toggleMenu } = useMenuContext();
   const { isScrolled } = useScroll();
   return (
     <DesktopNav isScrolled={isScrolled}>
-      <Wrapper>
-        <div className="logo-wrap">
-          <Link to="home" className="logo">
-            <Icon name={theme === "dark" ? "logo-light" : "logo-dark"} />
-          </Link>
-        </div>
-        <NavLinks theme={theme} toggleTheme={toggleTheme} />
-        <Hamburger toggled={isMenuOpen} toggle={toggleMenu} duration={0} />
-      </Wrapper>
+      <div className="logo-wrap">
+        <Link to="home" className="logo">
+          <Icon name={theme === "dark" ? "logo-light" : "logo-dark"} />
+        </Link>
+      </div>
+      <NavLinks theme={theme} toggleTheme={toggleTheme} />
+      <Hamburger toggled={isMenuOpen} toggle={toggleMenu} duration={0} />
     </DesktopNav>
   );
 };
 
 export default DesktopNavbar;
 
-const Wrapper = styled(Container)`
+const DesktopNav = styled.nav`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
   align-items: center;
-  height: 100%;
-`;
 
-const DesktopNav = styled.nav`
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  padding: 0 60px;
+  z-index: 2;
+
   ${props =>
     props.isScrolled &&
     css`
@@ -45,27 +47,17 @@ const DesktopNav = styled.nav`
       box-shadow: var(--navBoxShadow);
     `}
 
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 64px;
-  /* padding: 0 60px; */
-  z-index: 2;
-
   @media screen and (max-width: 768px) {
     justify-content: space-between;
-    /* padding: 0 30px; */
+    padding: 0 30px;
+
+    .nav-links {
+      display: none;
+    }
   }
 
   .logo-wrap {
     flex: 1;
-  }
-
-  .nav-links {
-    @media screen and (max-width: 768px) {
-      display: none;
-    }
   }
 
   .hamburger-react {

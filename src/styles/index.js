@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
   body {
     background: var(--bg1);
     color: var(--text);
-    transition: all 150ms linear;
+    font-weight: var(--fontWeight);
+    transition: background, color 150ms linear;
   }
 `;
