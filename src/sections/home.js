@@ -104,7 +104,7 @@ const params = {
 
 const Home = () => {
   return (
-    <Section>
+    <Section id="home">
       <Background params={params} />
       <Wrapper>
         <h1>
@@ -140,7 +140,7 @@ const Background = styled(Particles)`
 `;
 
 const Section = styled.section`
-  min-height: 75vh;
+  min-height: 100vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -154,6 +154,8 @@ const Wrapper = styled(Container)`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding: 0 10px;
+  margin-top: -180px;
 
   h1 {
     font-size: 2rem;
@@ -161,9 +163,6 @@ const Wrapper = styled(Container)`
     line-height: 1.5;
     span {
       font-size: 3rem;
-      strong {
-        font-weight: 500;
-      }
     }
   }
 

@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import Header from "components/header";
-import { Container } from "components/elements";
 import Footer from "components/footer";
 import { GlobalStyle } from "styles";
 import "../styles/theme.css";
@@ -12,9 +11,7 @@ const Layout = ({ children }) => {
     <>
       <GlobalStyle />
       <Header />
-      <Container>
-        <main style={{ marginTop: 64 }}>{children}</main>
-      </Container>
+      <main style={{ marginTop: 64 }}>{children}</main>
       {/* <Footer /> */}
     </>
   );

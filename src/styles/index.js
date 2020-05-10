@@ -22,4 +22,8 @@ export const GlobalStyle = createGlobalStyle`
     transition: background, color 150ms linear;
     line-height: 1.2;
   }
+
+  strong {
+    font-weight: 600;
+  }
 `;

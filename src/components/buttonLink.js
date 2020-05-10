@@ -11,7 +11,7 @@ const ButtonLink = ({ to, className, onClick, children }) => (
 
 export default ButtonLink;
 
-const StyledLink = styled(Link)`
+export const StyledLink = styled(Link)`
   position: relative;
   display: inline-block;
   background-color: var(--text);
@@ -24,7 +24,8 @@ const StyledLink = styled(Link)`
   font-weight: 500;
   line-height: 1.2;
   cursor: pointer;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+    0px 3px 1px -2px rgba(0, 0, 0, 0.12), 0px 1px 5px 0px rgba(0, 0, 0, 0.2);
   transition: transform 150ms ease-out;
 
   &.outline {
