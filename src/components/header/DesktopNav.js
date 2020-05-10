@@ -1,5 +1,6 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import media from "styled-media-query";
 import { Squash as Hamburger } from "hamburger-react";
 
 import NavLinks from "./NavLinks";
@@ -47,15 +48,6 @@ const DesktopNav = styled.nav`
       box-shadow: var(--navBoxShadow);
     `}
 
-  @media screen and (max-width: 768px) {
-    justify-content: space-between;
-    padding: 0 30px;
-
-    .nav-links {
-      display: none;
-    }
-  }
-
   .logo-wrap {
     flex: 1;
   }
@@ -66,8 +58,18 @@ const DesktopNav = styled.nav`
     & > div > div {
       background: var(--text) !important;
     }
-    @media screen and (max-width: 768px) {
+  }
+
+  ${media.lessThan("medium")`
+    justify-content: space-between;
+    padding: 0 30px;
+
+    .nav-links {
+      display: none;
+    }
+
+    .hamburger-react {
       display: block;
     }
-  }
+  `}
 `;

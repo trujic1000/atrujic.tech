@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import media from "styled-media-query";
 import { Link } from "react-scroll";
 
 const ButtonLink = ({ to, className, onClick, children }) => (
@@ -18,9 +19,8 @@ const StyledLink = styled(Link)`
   outline: none;
   border: 1px solid var(--text);
   border-radius: 10rem;
-  padding: 0.7rem 2.5rem;
-  margin-right: 1.8rem;
-  font-size: 1.15rem;
+  padding: 0.7rem 2rem;
+  margin-right: 2rem;
   font-weight: 500;
   line-height: 1.2;
   cursor: pointer;
@@ -35,4 +35,10 @@ const StyledLink = styled(Link)`
   &:hover {
     transform: translateY(-3px);
   }
+
+  ${media.lessThan("medium")`
+    padding: .5rem 1rem;
+    margin-right: 1rem;
+    font-size: .8rem;
+  `}
 `;

@@ -1,5 +1,7 @@
 import React from "react";
 import styled from "styled-components";
+import media from "styled-media-query";
+
 import { useMenuContext } from "state/menu";
 import Link from "components/scrollLink";
 import Icon from "components/icon";
@@ -58,8 +60,8 @@ const NavLinksWrapper = styled.ul`
     cursor: pointer;
   }
 
-  @media screen and (max-width: 768px) {
-    flex-direction: column;
+  ${media.lessThan("medium")`
+  flex-direction: column;
     li {
       padding: 12px;
       margin: 0 !important;
@@ -73,6 +75,7 @@ const NavLinksWrapper = styled.ul`
       transform: translate(-70%);
     }
   }
+  `}
 `;
 
 export const NavLink = styled(Link)`

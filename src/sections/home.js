@@ -1,6 +1,10 @@
 import React from "react";
 import styled from "styled-components";
+import media from "styled-media-query";
 import Particles from "react-particles-js";
+import ScrollLink from "components/scrollLink";
+import Icon from "components/icon";
+
 import { Container } from "components/elements";
 import ButtonLink from "components/buttonLink";
 
@@ -100,7 +104,7 @@ const params = {
 
 const Home = () => {
   return (
-    <Intro>
+    <Section>
       <Background params={params} />
       <Wrapper>
         <h1>
@@ -117,7 +121,10 @@ const Home = () => {
           </ButtonLink>
         </div>
       </Wrapper>
-    </Intro>
+      <Link to="about-me">
+        <Icon name="arrow-down" size={18} />
+      </Link>
+    </Section>
   );
 };
 
@@ -132,11 +139,15 @@ const Background = styled(Particles)`
   height: 100vh;
 `;
 
-const Intro = styled.section`
+const Section = styled.section`
   min-height: 75vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
+
+  svg {
+    fill: var(--text);
+  }
 `;
 
 const Wrapper = styled(Container)`
@@ -145,13 +156,50 @@ const Wrapper = styled(Container)`
   justify-content: center;
 
   h1 {
-    font-size: 3rem;
+    font-size: 2rem;
     margin-bottom: 2rem;
+    line-height: 1.5;
     span {
-      font-size: 4rem;
+      font-size: 3rem;
       strong {
         font-weight: 500;
       }
     }
   }
+
+  ${media.lessThan("medium")`
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1.5rem;
+      span {
+        font-size: 2.5rem;
+      }
+    }
+  `}
+
+  ${media.lessThan("550px")`
+    h1 {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      span {
+        font-size: 2rem;
+      }
+    }
+  `}
+
+  ${media.lessThan("small")`
+    h1 {
+      font-size: 1rem;
+      span {
+        font-size: 1.5rem;
+      }
+    }
+  `}
+`;
+
+const Link = styled(ScrollLink)`
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%, -50%);
 `;
