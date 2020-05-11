@@ -11,9 +11,9 @@ const MobileNavbar = ({ theme, toggleTheme }) => {
   return (
     <>
       {isMenuOpen && (
-        <MobileNav>
+        <Nav>
           <NavLinks theme={theme} toggleTheme={toggleTheme} />
-        </MobileNav>
+        </Nav>
       )}
     </>
   );
@@ -21,7 +21,7 @@ const MobileNavbar = ({ theme, toggleTheme }) => {
 
 export default MobileNavbar;
 
-const MobileNav = styled.nav`
+const Nav = styled.nav`
   position: fixed;
   top: 0;
   left: 0;

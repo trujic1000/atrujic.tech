@@ -13,7 +13,7 @@ const DesktopNavbar = ({ theme, toggleTheme }) => {
   const { isMenuOpen, toggleMenu } = useMenuContext();
   const { isScrolled } = useScroll();
   return (
-    <DesktopNav isScrolled={isScrolled}>
+    <Nav isScrolled={isScrolled}>
       <div className="logo-wrap">
         <Link to="home" className="logo">
           <Icon name={theme === "dark" ? "logo-light" : "logo-dark"} />
@@ -21,13 +21,13 @@ const DesktopNavbar = ({ theme, toggleTheme }) => {
       </div>
       <NavLinks theme={theme} toggleTheme={toggleTheme} />
       <Hamburger toggled={isMenuOpen} toggle={toggleMenu} duration={0} />
-    </DesktopNav>
+    </Nav>
   );
 };
 
 export default DesktopNavbar;
 
-const DesktopNav = styled.nav`
+const Nav = styled.nav`
   display: flex;
   flex-flow: row nowrap;
   justify-content: space-around;
@@ -44,7 +44,7 @@ const DesktopNav = styled.nav`
   ${props =>
     props.isScrolled &&
     css`
-      background: var(--bgNav);
+      background: var(--bg2);
       box-shadow: var(--navBoxShadow);
     `}
 

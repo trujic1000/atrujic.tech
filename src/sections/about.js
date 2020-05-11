@@ -34,7 +34,12 @@ const About = () => {
           <p>
             Besides being a developer, I am also a student athlete, majoring in
             <strong> Computer Science</strong> and playing football/soccer for{" "}
-            <a href="https://www.moval.edu/" target="_blank" className="mvc">
+            <a
+              href="https://www.moval.edu/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mvc"
+            >
               Missouri Valley College
             </a>
           </p>
@@ -43,7 +48,12 @@ const About = () => {
             focus on the frameworks like <strong>React.js</strong>, Next.js,
             Gatsby, Node and Express.
           </p>
-          <Link href="/resume.pdf" target="_blank" className="resume">
+          <Link
+            href="/resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="resume"
+          >
             Resume
           </Link>
         </div>
@@ -51,7 +61,11 @@ const About = () => {
           <Img
             fluid={aboutImage.childImageSharp.fluid}
             alt="Aleksandar Trujic"
-            imgStyle={{ objectFit: "contain" }}
+            imgStyle={{
+              objectFit: "contain",
+              filter: "saturate(var(--saturation))",
+              transition: "all 150ms linear",
+            }}
             style={{ maxHeight: "40vh" }}
           />
         </div>
