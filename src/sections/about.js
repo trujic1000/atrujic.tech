@@ -4,7 +4,7 @@ import media from "styled-media-query";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
-import { Container } from "components/elements";
+import { Container, Heading, Skew } from "components/elements";
 import { StyledLink } from "components/buttonLink";
 
 const ABOUT_IMAGE_QUERY = graphql`
@@ -24,9 +24,9 @@ const About = () => {
   return (
     <Section id="about-me">
       <Skew />
-      <h1>About Me</h1>
+      <Heading>About Me</Heading>
       <Wrapper>
-        <div className="left">
+        <div className="flex_item flex_item--left">
           <p>
             I’m Aleksandar, a self-taught <strong>front-end </strong> developer
             from Bosnia and Herzegovina.{" "}
@@ -57,7 +57,7 @@ const About = () => {
             Resume
           </Link>
         </div>
-        <div className="right">
+        <div className="flex_item flex_item--right">
           <Img
             fluid={aboutImage.childImageSharp.fluid}
             alt="Aleksandar Trujic"
@@ -80,41 +80,19 @@ const Section = styled.section`
   position: relative;
   padding: 120px 0 280px;
 
-  h1 {
-    font-size: 3rem;
-    text-align: center;
-    margin-bottom: 120px;
-  }
-
   ${media.lessThan("medium")`
     padding: 80px 0 200px;
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 60px;
-    }
   `}
 `;
 
-const Skew = styled.div`
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: var(--bg2);
-  z-index: -1;
-  transform: skewY(-3deg);
-  transform-origin: top left;
-`;
-
 const Wrapper = styled(Container)`
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  display: flex;
   align-items: center;
   padding: 0 10px;
+
+  .flex_item {
+    flex: 1;
+  }
 
   p {
     font-size: 1.15rem;
@@ -128,14 +106,16 @@ const Wrapper = styled(Container)`
   }
 
   ${media.lessThan("medium")`
-    grid-template-columns: 1fr;
+    flex-direction: column;
+
+    .flex_item--right {
+      width: 100%;
+      margin-top: 4rem;
+    }
+    
     p {
       font-size: .9rem;
       padding-right: 0;
-    }
-
-    .right {
-      display: none;
     }
   `}
 `;

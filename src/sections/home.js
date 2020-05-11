@@ -116,7 +116,7 @@ const Home = () => {
         </h1>
         <div className="button-wrap">
           <ButtonLink to="portfolio">Portfolio</ButtonLink>
-          <ButtonLink to="portfolio" className="outline">
+          <ButtonLink to="contact" className="outline">
             Get In Touch
           </ButtonLink>
         </div>
