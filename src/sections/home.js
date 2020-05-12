@@ -106,15 +106,15 @@ const Home = () => {
   return (
     <Section id="home">
       <Background params={params} />
-      <Wrapper>
-        <h1>
+      <Wrapper className="home_wrapper">
+        <h1 className="home__heading">
           Hey, I'm Aleksandar!
           <br />
           <span>
             A <strong>Front-End</strong> Developer.
           </span>
         </h1>
-        <div className="button-wrap">
+        <div className="home__button-wrapper">
           <ButtonLink to="portfolio">Portfolio</ButtonLink>
           <ButtonLink to="contact" className="outline">
             Get In Touch
@@ -155,9 +155,9 @@ const Wrapper = styled(Container)`
   flex-direction: column;
   justify-content: center;
   padding: 0 10px;
-  margin-top: -180px;
+  margin-top: -11rem;
 
-  h1 {
+  .home__heading {
     font-size: 2rem;
     margin-bottom: 2rem;
     line-height: 1.5;
@@ -167,7 +167,7 @@ const Wrapper = styled(Container)`
   }
 
   ${media.lessThan("medium")`
-    h1 {
+    .home__heading {
       font-size: 1.5rem;
       margin-bottom: 1.5rem;
       span {
@@ -177,7 +177,7 @@ const Wrapper = styled(Container)`
   `}
 
   ${media.lessThan("550px")`
-    h1 {
+    .home__heading {
       font-size: 1rem;
       margin-bottom: 1rem;
       span {
@@ -187,7 +187,7 @@ const Wrapper = styled(Container)`
   `}
 
   ${media.lessThan("small")`
-    h1 {
+    .home__heading {
       font-size: 1rem;
       span {
         font-size: 1.5rem;

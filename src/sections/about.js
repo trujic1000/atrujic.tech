@@ -25,11 +25,11 @@ const About = () => {
     <Section id="about-me">
       <Skew />
       <Heading>About Me</Heading>
-      <Wrapper>
-        <div className="flex_item flex_item--left">
+      <Wrapper className="about-me__wrapper">
+        <div className="flex-item flex-item--left">
           <p>
             I’m Aleksandar, a self-taught <strong>front-end </strong> developer
-            from Bosnia and Herzegovina.{" "}
+            from Bosnia and Herzegovina.
           </p>
           <p>
             Besides being a developer, I am also a student athlete, majoring in
@@ -57,14 +57,12 @@ const About = () => {
             Resume
           </Link>
         </div>
-        <div className="flex_item flex_item--right">
+        <div className="flex-item flex-item--right">
           <Img
             fluid={aboutImage.childImageSharp.fluid}
             alt="Aleksandar Trujic"
             imgStyle={{
               objectFit: "contain",
-              filter: "saturate(var(--saturation))",
-              transition: "all 150ms linear",
             }}
             style={{ maxHeight: "40vh" }}
           />
@@ -76,12 +74,12 @@ const About = () => {
 
 export default About;
 
-const Section = styled.section`
+export const Section = styled.section`
   position: relative;
-  padding: 120px 0 280px;
+  padding: 7.5rem 0 17.5rem;
 
   ${media.lessThan("medium")`
-    padding: 80px 0 200px;
+    padding: 5rem 0 12rem;
   `}
 `;
 
@@ -90,7 +88,7 @@ const Wrapper = styled(Container)`
   align-items: center;
   padding: 0 10px;
 
-  .flex_item {
+  .flex-item {
     flex: 1;
   }
 
@@ -108,7 +106,7 @@ const Wrapper = styled(Container)`
   ${media.lessThan("medium")`
     flex-direction: column;
 
-    .flex_item--right {
+    .flex-item--right {
       width: 100%;
       margin-top: 4rem;
     }
