@@ -12,7 +12,7 @@ const Layout = ({ children }) => {
       <GlobalStyle />
       <Header />
       <main style={{ marginTop: 64 }}>{children}</main>
-      {/* <Footer /> */}
+      <Footer />
     </>
   );
 };

@@ -23,6 +23,12 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.2;
   }
 
+  a {
+    color: var(--text);
+    text-decoration: none;
+    transition: all 150ms linear;
+  }
+
   strong {
     font-weight: 600;
   }

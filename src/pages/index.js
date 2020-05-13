@@ -2,7 +2,7 @@ import React from "react";
 
 import Layout from "components/layout";
 import SEO from "components/seo";
-import { Home, About, Portfolio } from "sections";
+import { Home, About, Portfolio, Contact } from "sections";
 
 const IndexPage = () => (
   <Layout>
@@ -10,6 +10,7 @@ const IndexPage = () => (
     <Home />
     <About />
     <Portfolio />
+    <Contact />
   </Layout>
 );
 

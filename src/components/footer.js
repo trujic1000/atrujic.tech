@@ -5,7 +5,16 @@ const Footer = () => {
   return (
     <Wrapper>
       <span>© {new Date().getFullYear()} Aleksandar Trujic </span>
-      <span>Built with Gatsby</span>
+      <span>
+        Built with{" "}
+        <a
+          href="https://www.gatsbyjs.org/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <strong>Gatsby</strong>
+        </a>
+      </span>
     </Wrapper>
   );
 };
@@ -17,7 +26,7 @@ const Wrapper = styled.footer`
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 60px;
+  padding: 30px 60px;
   line-height: 1.5;
 
   @media screen and (max-width: 768px) {

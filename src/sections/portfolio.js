@@ -1,6 +1,4 @@
 import React from "react";
-import styled from "styled-components";
-import media from "styled-media-query";
 import { useStaticQuery, graphql } from "gatsby";
 
 import { Heading } from "components/elements";
