@@ -1,14 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import media from "styled-media-query";
-import {
-  FaGithubSquare,
-  FaLinkedin,
-  FaFacebookSquare,
-  FaInstagramSquare,
-} from "react-icons/fa";
 
 import { Container, Heading, Skew } from "components/elements";
+import Icon from "components/icon";
 import contactImage from "images/contact.svg";
 
 const Contact = () => {
@@ -42,28 +37,28 @@ const Contact = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithubSquare />
+              <Icon name="github-circle" />
             </a>
             <a
               href="https://www.linkedin.com/in/trujic1000/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin />
+              <Icon name="linkedin-circle" />
             </a>
             <a
               href="https://www.facebook.com/trujic1000/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaFacebookSquare />
+              <Icon name="facebook-circle" />
             </a>
             <a
               href="https://www.instagram.com/trujic1000/"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaInstagramSquare />
+              <Icon name="instagram-circle" />
             </a>
           </div>
         </div>
@@ -118,10 +113,11 @@ const Wrapper = styled(Container)`
     .contact__social {
       margin-top: 2rem;
       a {
+        margin-right: 1rem;
         svg {
+          fill: var(--text);
           width: 40px;
           height: 40px;
-          margin-right: 5px;
         }
       }
     }
