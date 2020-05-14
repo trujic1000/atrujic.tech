@@ -29,6 +29,7 @@ function SEO({ description, lang, meta, title }) {
             title
             description
             author
+            siteUrl
           }
         }
       }
@@ -64,7 +65,7 @@ function SEO({ description, lang, meta, title }) {
       <meta itemProp="description" content={metaDescription} />
       <meta
         itemProp="image"
-        content={`${site.siteMetadata.siteUrl}/${ogImage}`}
+        content={`${site.siteMetadata.siteUrl}${ogImage}`}
       />
 
       <link rel="apple-touch-icon" sizes="57x57" href={appleIcon57x57} />
