@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react";
 
 export const useLocalStorage = (key, initialValue) => {
-  const item = window.localStorage.getItem(key);
+  let item;
+  if (typeof window !== `undefined`) {
+    item = window.localStorage.getItem(key);
+  }
   const [value, setValue] = useState(item || initialValue);
 
   useEffect(() => {
