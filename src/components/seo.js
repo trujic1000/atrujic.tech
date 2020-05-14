@@ -54,7 +54,7 @@ function SEO({ description, lang, meta, title }) {
       <meta property="og:site_name" content={site.siteMetadata.title} />
       <meta
         property="og:image"
-        content={`${site.siteMetadata.siteUrl}/${ogImage}`}
+        content={`${site.siteMetadata.siteUrl}${ogImage}`}
       />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
