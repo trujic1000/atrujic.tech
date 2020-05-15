@@ -1,7 +1,7 @@
 import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 
-import { Heading } from "components/elements";
+import { Heading, Skew } from "components/elements";
 import Project from "components/project";
 import { Section } from "./about";
 
@@ -18,7 +18,7 @@ const PROJECTS_QUERY = graphql`
           }
           image {
             asset {
-              fluid(maxWidth: 1200) {
+              fluid(maxWidth: 1900) {
                 ...GatsbySanityImageFluid
               }
             }
@@ -35,6 +35,7 @@ const Portfolio = () => {
   const { allSanityProject } = useStaticQuery(PROJECTS_QUERY);
   return (
     <Section id="portfolio">
+      <Skew />
       <Heading>Portfolio</Heading>
       {allSanityProject.edges.map(({ node: project }) => {
         // Put tags into a single variable

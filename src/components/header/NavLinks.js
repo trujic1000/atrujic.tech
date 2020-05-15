@@ -12,13 +12,13 @@ const DesktopNavLinks = ({ theme, toggleTheme }) => {
   return (
     <NavLinksWrapper className="nav-links">
       <li>
-        <NavLink to="about-me" className="link" onClick={closeMenu}>
-          About Me
+        <NavLink to="portfolio" className="link" onClick={closeMenu}>
+          Portfolio
         </NavLink>
       </li>
       <li>
-        <NavLink to="portfolio" className="link" onClick={closeMenu}>
-          Portfolio
+        <NavLink to="about-me" className="link" onClick={closeMenu}>
+          About Me
         </NavLink>
       </li>
       <li>

@@ -2,11 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import media from "styled-media-query";
 import Particles from "react-particles-js";
+
 import ScrollLink from "components/scrollLink";
 import Icon from "components/icon";
-
 import { Container } from "components/elements";
 import ButtonLink from "components/buttonLink";
+import { useScroll } from "hooks";
 
 const params = {
   particles: {
@@ -103,6 +104,7 @@ const params = {
 };
 
 const Home = () => {
+  const { isScrolled } = useScroll();
   return (
     <Section id="home">
       <Background params={params} />
@@ -121,9 +123,14 @@ const Home = () => {
           </ButtonLink>
         </div>
       </Wrapper>
-      <Link to="about-me">
+      <Link to="portfolio">
         <Icon name="arrow-down" size={18} />
       </Link>
+      {isScrolled && (
+        <HomeLink to="home">
+          <Icon name="arrow-up" size={18} />
+        </HomeLink>
+      )}
     </Section>
   );
 };
@@ -201,4 +208,12 @@ const Link = styled(ScrollLink)`
   bottom: 30px;
   left: 50%;
   transform: translate(-50%, -50%);
+`;
+
+const HomeLink = styled(ScrollLink)`
+  transform: rotate(180deg);
+  position: fixed;
+  bottom: 32px;
+  right: 30px;
+  z-index: 2;
 `;

@@ -14,7 +14,7 @@ module.exports = {
       options: {
         projectId: "4y6jno17",
         dataset: "production",
-        graphqlTag: "default",
+        watchMode: true,
       },
     },
     {

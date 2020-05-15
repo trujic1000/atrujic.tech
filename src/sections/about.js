@@ -4,7 +4,7 @@ import media from "styled-media-query";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
-import { Container, Heading, Skew } from "components/elements";
+import { Container, Heading } from "components/elements";
 import { StyledLink } from "components/buttonLink";
 
 const ABOUT_IMAGE_QUERY = graphql`
@@ -23,7 +23,6 @@ const About = () => {
   const { aboutImage } = useStaticQuery(ABOUT_IMAGE_QUERY);
   return (
     <Section id="about-me">
-      <Skew />
       <Heading>About Me</Heading>
       <Wrapper className="about-me__wrapper">
         <div className="flex-item flex-item--left">
