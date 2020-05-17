@@ -127,7 +127,7 @@ const Home = () => {
         <Icon name="arrow-down" size={18} />
       </Link>
       {isScrolled && (
-        <HomeLink to="home">
+        <HomeLink to="home" className="home__link" offset={-100}>
           <Icon name="arrow-up" size={18} />
         </HomeLink>
       )}
@@ -216,4 +216,8 @@ const HomeLink = styled(ScrollLink)`
   bottom: 32px;
   right: 30px;
   z-index: 2;
+
+  ${media.lessThan("medium")`
+    display: none;
+  `}
 `;

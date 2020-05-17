@@ -11,7 +11,7 @@ const ABOUT_IMAGE_QUERY = graphql`
   query aboutImageQuery {
     aboutImage: file(relativePath: { eq: "about.png" }) {
       childImageSharp {
-        fluid(maxWidth: 405, quality: 100) {
+        fluid(maxWidth: 1600, quality: 100) {
           ...GatsbyImageSharpFluid
         }
       }

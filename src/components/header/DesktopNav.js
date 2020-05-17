@@ -39,7 +39,7 @@ const Nav = styled.nav`
   width: 100%;
   height: 64px;
   padding: 0 60px;
-  z-index: 2;
+  z-index: 11;
 
   ${props =>
     props.isScrolled &&
