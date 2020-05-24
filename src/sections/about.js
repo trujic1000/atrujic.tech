@@ -27,19 +27,19 @@ const About = () => {
       <Wrapper className="about-me__wrapper">
         <div className="flex-item flex-item--left">
           <p>
-            I’m Aleksandar, a self-taught <strong>front-end </strong> developer
-            from Bosnia and Herzegovina.
+            I’m Aleksandar, a self-taught <strong>front-end </strong> developer.
           </p>
           <p>
             Besides being a developer, I am also a student athlete, majoring in
-            <strong> Computer Science</strong> and playing football/soccer for{" "}
+            <strong> Computer Science</strong> and playing{" "}
+            <strong>football/soccer</strong> for{" "}
             <a
               href="https://www.moval.edu/"
               target="_blank"
               rel="noopener noreferrer"
               className="mvc"
             >
-              Missouri Valley College
+              Missouri Valley College.
             </a>
           </p>
           <p>
